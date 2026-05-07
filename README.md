@@ -1,4 +1,4 @@
-# Interviewpreppy
+# Smart_Interview_System
 
 AI interview simulator with a `FastAPI` backend and `React` frontend.
 
