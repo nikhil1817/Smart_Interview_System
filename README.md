@@ -1,81 +1,102 @@
-# Smart_Interview_System
+Smart Interview System
 
-AI interview simulator with a `FastAPI` backend and `React` frontend.
+AI-powered interview simulator built with React and FastAPI that conducts mock interviews, evaluates responses, and provides intelligent feedback.
+
+---
+
+## Features
+
+- AI-generated interview questions
+- Multiple interview roles and domains
+- Resume parsing and analysis
+- Real-time interview simulation
+- LLM-based answer evaluation
+- Interactive React frontend
+- FastAPI backend APIs
+- Configurable interview workflows
+
+---
+
+## Tech Stack
+
+### Frontend
+- React
+- JavaScript
+- CSS
+
+### Backend
+- FastAPI
+- Python
+- OpenAI API
+
+---
+
+## Screenshots
+
+### Interview Configuration Dashboard
+
+<img src="assets/Img1.png" width="900"/>
+
+### AI Interview Interface
+
+<img src="assets/Img2.png" width="900"/>
+
+---
 
 ## Project Structure
 
-- `backend/`: API, model inference routes, interview logic
-- `frontend/`: React UI
+```text
+backend/   # API and interview logic
+frontend/  # React frontend
+assets/    # README screenshots
+Prerequisites
+Python 3.10+
+Node.js 18+
+npm
+Backend Setup
 
-## Prerequisites
+Install backend dependencies:
 
-- Python `3.10+` (your workspace currently uses a local venv at `.venv`)
-- Node.js `18+` and npm
-
-## 1) Backend Setup and Run
-
-From project root:
-
-```bash
 source .venv/bin/activate
 pip install -r backend/requirements.txt
-```
 
-Configure env file:
+Create environment file:
 
-```bash
 cp backend/.env.example backend/.env
-```
 
-Set your key in `backend/.env`:
+Add your OpenAI API key inside backend/.env:
 
-```dotenv
-OPENAI_API_KEY=sk-...
-```
+OPENAI_API_KEY=your_key_here
 
-Run backend:
+Run backend server:
 
-```bash
 .venv/bin/uvicorn --app-dir backend main:app --host 127.0.0.1 --port 8000
-```
-
-Backend checks:
-
-```bash
-curl -s http://127.0.0.1:8000/
-curl -s http://127.0.0.1:8000/api/v1/model/health
-```
-
-## 2) Frontend Setup and Run
+Frontend Setup
 
 In a new terminal:
 
-```bash
 npm install
 npm start
-```
 
-Open:
+Frontend runs on:
 
-- `http://localhost:3000`
-
-## 3) Run Both Together (2 terminals)
-
-Terminal A (backend):
-
-```bash
+http://localhost:3000
+API Health Checks
+curl -s http://127.0.0.1:8000/
+curl -s http://127.0.0.1:8000/api/v1/model/health
+Running Full Application
+Terminal A — Backend
 source .venv/bin/activate
 .venv/bin/uvicorn --app-dir backend main:app --host 127.0.0.1 --port 8000
-```
-
-Terminal B (frontend):
-
-```bash
+Terminal B — Frontend
 npm start
-```
-
-## Notes
-
-- Backend is strict LLM-first by default (`ALLOW_RULE_BASED_FALLBACK=false` in `backend/.env`).
-- If OpenAI is rate-limited, endpoints may return `503` with a provider reason.
-- Detailed backend model settings are documented in `backend/README.md`.
+Notes
+Uses LLM-first interview evaluation flow
+Returns 503 when provider rate limits occur
+Backend configuration details are available in backend/README.md
+Future Improvements
+Voice-based interview mode
+Interview performance analytics
+Multi-language support
+Interview history tracking
+AI-generated improvement suggestions
