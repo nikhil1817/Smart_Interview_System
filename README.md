@@ -35,11 +35,11 @@ AI-powered interview simulator built with React and FastAPI that conducts mock i
 
 ### Interview Configuration Dashboard
 
-<img src="assets/Img1.png" width="900"/>
+<img src="assets/Img1.jpeg" width="900"/>
 
 ### AI Interview Interface
 
-<img src="assets/Img2.png" width="900"/>
+<img src="assets/Img2.jpeg" width="900"/>
 
 ---
 
