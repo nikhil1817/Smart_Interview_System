@@ -1,0 +1,37 @@
+/* Interview UI Styles */
+
+.interview-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.interview-header {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.interview-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex: 1;
+}
+
+.question-section,
+.agent-section,
+.answer-section,
+.evaluation-section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .interview-main {
+    grid-template-columns: 1fr;
+  }
+}
